@@ -1,0 +1,65 @@
+Write shell scripts programming.
+
+USE VI EDITOR
+
+CODE: 
+
+# Arithematic Operations
+echo "Arithmetic Operations: "
+num1=10
+num2=20
+
+sum=$(($num1 + $num2))
+echo "The sum of $num1 and $num2 is $sum"
+
+diff=$(($num1 - $num2))
+echo "The difference of $num1 and $num2 is $diff"
+
+divide=$(($num1 / $num2))
+echo "The division of $num1 and $num2 is $divide"
+
+multiply=$(($num1 * $num2))
+echo "The multiplication of $num1 and $num2 is $multiply"
+
+modulus=$(($num1 % $num2))
+echo "The modulus of $num1 and $num2 is $modulus"
+
+# Conditional Statements
+echo "Conditional Statements: "
+if [ $((sum % 2)) == 0 ]; then
+    echo "The sum of $num1 and $num2 i.e. $sum is even."
+else
+    echo "The sum of $num1 and $num2 i.e. $sum is odd."
+fi
+
+# Top 10 processes based on Memory Usage
+echo "Top 10 processes based on Memory Usage: "
+top -b -o +%MEM | head -n 11
+
+# Top 10 processes based on CPU utilization
+echo "Top 10 processes based on CPU utilization:"
+top -b -o +%CPU | head -n 11
+
+#descending order, and then it shows the top 10 processes based on CPU usage
+echo "Top 10 processes based on CPU utilization:"
+ps -eo pid,ppid,%mem,%cpu,cmd --sort=-%cpu | head -n 11
+
+
+
+
+
+# Top 10 processes based on their PIDs
+echo "Top 10 processes based on their PIDs: "
+top -b -o -PID | head -n 11
+
+# System Information
+echo "System Information: "
+echo "The current logged-in user is $(whoami)"
+echo "The current working directory is $(pwd)"
+echo "The Linux Shell is $SHELL"
+echo "The Linux Kernel is $(uname -n)"
+
+
+
+
+

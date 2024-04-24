@@ -1,0 +1,33 @@
+EXP_1
+
+Explore the internal and external commands of Linux.
+
+
+
+
+### Internal Commands:
+
+1. **cd:** Changes the current directory.
+2. **pwd:** Prints the current working directory.
+3. **echo:** Prints arguments to the standard output.
+4. **alias:** Creates aliases for commands.
+5. **history:** Displays the command history.
+6. **export:** Sets an environment variable.
+7. **source:** Executes commands from a file in the current shell.
+8. **exit:** Exits the current shell.
+9. **type:** Displays information about a command type.
+10. **kill:** Sends signals to processes.
+
+### External Commands:
+
+1. **ls:** Lists files and directories.
+2. **mkdir:** Creates a new directory.
+3. **rm:** Removes files or directories.
+4. **cp:** Copies files and directories.
+5. **mv:** Moves or renames files and directories.
+6. **cat:** Concatenates and displays files.
+7. **grep:** Searches for patterns in files.
+8. **find:** Searches for files in a directory hierarchy.
+9. **chmod:** Changes file permissions.
+10. **chown:** Changes file ownership.
+

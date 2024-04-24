@@ -1,0 +1,32 @@
+Implement process scheduling algorithms FCFS and SJF
+using CPU-OS Simulator.
+
+
+STEP 1:
+Open the compiler window by selecting the COMPILER button in the current window.
+
+STEP 2:
+CODE: 
+
+PROGRAM LoopTest
+	i = 0
+	for n = 0 to 40
+	i = i + 1
+	next
+end
+
+STEP 3: NOW IN BOTTOM LEFT THERE IS 4 OPTION 
+		there go in "COMPILER"
+			and COMPILE CODE.!
+
+STEP 4: NOW THERE IS ONE OPTION OF 
+		"LOAD IN MEMORY" in ASSEMBLY CODE SECTION 
+			click on that.
+
+STEP 5: NOW YOU WILL REDIRECT IN MAIN Window so now there is one 	button "os 0" click on that
+
+STEP 6: NOW you will generate new process and then select 	SCHDULER AFTER THAT "START" 
+
+
+
+Download link : https://teach-sim.com

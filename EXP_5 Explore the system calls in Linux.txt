@@ -1,0 +1,78 @@
+Explore the system calls in Linux.
+
+CODE:
+
+
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
+
+int main() {
+    int num1, num2, num3, greatest, smallest, fd;
+    char buffer[100];
+    char ans[100];
+
+    // Input three numbers
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+    printf("Enter the third number: ");
+    scanf("%d", &num3);
+
+    // Find the greatest and smallest numbers
+    if (num1 > num2 && num1 > num3) {
+        greatest = num1;
+        if (num2 > num3)
+            smallest = num3;
+        else
+            smallest = num2;
+    } else if (num2 > num1 && num2 > num3) {
+        greatest = num2;
+        if (num1 > num3)
+            smallest = num3;
+        else
+            smallest = num1;
+    } else {
+        greatest = num3;
+        if (num1 > num2)
+            smallest = num2;
+        else
+            smallest = num1;
+    }
+
+    // Store the result in a string
+    sprintf(ans, "Greatest : %d And Smallest : %d", greatest, smallest);
+
+    // Open a file for writing
+    fd = open("answer.txt", O_RDWR | O_CREAT, 0644);
+    if (fd != -1) {
+        // Write the result to the file
+        write(fd, ans, strlen(ans));
+        
+        // Reset file pointer to the beginning
+        lseek(fd, 0, 0);
+
+        // Read the content of the file
+        read(fd, buffer, sizeof(buffer));
+        
+        // Print the content of the file
+        printf("The content of file answer.txt: %s\n", buffer);
+
+        // Close the file
+        close(fd);
+    } else {
+        printf("Error: Failed to open file for writing.\n");
+    }
+
+    return 0;
+}
+
+
+how to run:
+
+sudo apt install gcc //if not present
+gcc program.c -o program
+./program

@@ -1,0 +1,50 @@
+Implement memory allocation strategy First fit
+
+CODE:
+
+#include <stdio.h>
+
+#define MAX_BLOCKS 5
+#define MAX_PROCESSES 4
+
+void firstFit(int blockSize[], int m, int processSize[], int n) {
+    int i, j;
+    int allocation[MAX_PROCESSES];
+
+    for (i = 0; i < n; i++) {
+        allocation[i] = -1;
+    }
+
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            if (blockSize[j] >= processSize[i]) {
+                allocation[i] = j;
+                blockSize[j] -= processSize[i];
+                break;
+            }
+        }
+    }
+
+    printf("\nProcess No. \t Process Size \t Block No.\n");
+    for (i = 0; i < n; i++) {
+        printf("%i  \t \t \t \t \t", i + 1);
+        printf("%i \t\t\t", processSize[i]);
+        if (allocation[i] != -1)
+            printf("%i", allocation[i] + 1);
+        else
+            printf("Not allocated");
+        printf("\n");
+    }
+}
+
+int main() {
+    int m = MAX_BLOCKS; // Number of blocks
+    int n = MAX_PROCESSES; // Number of process
+    int blockSize[MAX_BLOCKS] = {100, 500, 200, 300, 600};
+    int processSize[MAX_PROCESSES] = {212, 417, 112, 426};
+
+    firstFit(blockSize, m, processSize, n);
+
+    return 0;
+}
+

@@ -1,0 +1,32 @@
+Explore User Management commands of Linux.
+
+
+
+
+sudo useradd username
+
+sudo userdel username
+
+sudo groupadd groupname
+
+sudo usermod -G groupname username
+
+sudo groupdel groupname
+
+sudo whoami
+
+sudo passwd username
+
+
+
+//= list of all users
+
+1) sudo getent passwd 
+
+2) cat /etc/passwd
+
+for group
+
+cat /etc/group
+
+
